@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Expense Detail - AmawBuild</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AmawBuild</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="detail.html">Detail</a></li>
+                    <li class="nav-item"><a class="nav-link" href="summary.html">Weekly Summary</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="expense.html">Expense Entry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="expense_list.html">Expense List</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="expense_detail.html">Expense Detail</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <h1 id="form-title">Expense</h1>
+        <div id="alert-placeholder"></div>
+        <form id="expense-detail-form">
+            <input type="hidden" id="id" name="id">
+            <div class="mb-3">
+                <label for="item" class="form-label">Item</label>
+                <input id="item" name="item" class="form-control" required>
+            </div>
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label for="quantity" class="form-label">Quantity</label>
+                    <input id="quantity" name="quantity" type="number" step="any" class="form-control" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="unitcost" class="form-label">Unit Cost</label>
+                    <input id="unitcost" name="unitcost" type="number" step="any" class="form-control" required>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="totalcost" class="form-label">Total Cost</label>
+                    <input id="totalcost" name="totalcost" type="number" step="any" class="form-control" readonly>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <label for="date" class="form-label">Date</label>
+                    <input id="date" name="date" type="date" class="form-control" required>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="stage" class="form-label">Stage</label>
+                <select id="stage" name="stage" class="form-select">
+                    <option value="">-- Select stage --</option>
+                    <option>Foundation</option>
+                    <option>Ground Floor</option>
+                    <option>Decking</option>
+                    <option>First Floor</option>
+                    <option>Roofing</option>
+                    <option>Plastering</option>
+                    <option>Electrical</option>
+                    <option>Plumbing</option>
+                    <option>Painting</option>
+                    <option>Landscaping</option>
+                    <option>Finishing</option>
+                </select>
+            </div>
+            <div class="d-flex gap-2">
+                <button class="btn btn-primary" id="save-expense">Save</button>
+                <a class="btn btn-secondary" href="expense_list.html">Back to list</a>
+                <button type="button" id="delete-expense" class="btn btn-danger ms-auto">Delete</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="expense.js"></script>
+</body>
+
+</html>

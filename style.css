@@ -1,0 +1,3 @@
+body { background:#f8f9fa; }
+#entries-table td, #entries-table th { vertical-align: middle; }
+.alert-fixed { position: fixed; top: 1rem; right: 1rem; z-index: 1050; }

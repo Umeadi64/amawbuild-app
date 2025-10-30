@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AmawBuild Tracking - Detail</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">AmawBuild</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">List</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="detail.html">Detail</a></li>
+                    <li class="nav-item"><a class="nav-link" href="summary.html">Weekly Summary</a></li>
+                    <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="expense.html">Expense Entry</a></li>
+                    <li class="nav-item"><a class="nav-link" href="expense_list.html">Expense List</a></li>
+                    <li class="nav-item"><a class="nav-link" href="expense_detail.html">Expense Detail</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+        <h1 id="form-title">Entry</h1>
+        <div id="alert-placeholder"></div>
+        <form id="entry-form">
+            <input type="hidden" id="id" name="id">
+            <div class="mb-3">
+                <label for="date" class="form-label">Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+            </div>
+            <div class="mb-3">
+                <label for="material_name" class="form-label">Material Name</label>
+                <select class="form-select" id="material_name" name="material_name" required>
+                    <option value="">-- Select material --</option>
+                    <option>8mm Iron rod</option>
+                    <option>10mm Iron rod</option>
+                    <option>12mm Iron rod</option>
+                    <option>16mm Iron rod</option>
+                    <option>Cement</option>
+                    <option>6in Block</option>
+                    <option>9in Block</option>
+                    <option>Sand</option>
+                    <option>Granite</option>
+                    <option>Stone</option>
+                    <option>Digger</option>
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <label for="quantity_used" class="form-label">Quantity Used</label>
+                    <input type="number" step="any" class="form-control" id="quantity_used" name="quantity_used"
+                        required>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <label for="unit" class="form-label">Unit</label>
+                    <select class="form-select" id="unit" name="unit" required>
+                        <option value="">-- Select unit --</option>
+                        <option>bags</option>
+                        <option>pcs</option>
+                        <option>rolls</option>
+                        <option>units</option>
+                        <option>lengths</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="stage" class="form-label">Stage</label>
+                <select class="form-select" id="stage" name="stage" required>
+                    <option value="">-- Select stage --</option>
+                    <option>Foundation</option>
+                    <option>Ground Floor</option>
+                    <option>Decking</option>
+                    <option>First Floor</option>
+                    <option>Roofing</option>
+                    <option>Plastering</option>
+                    <option>Electrical</option>
+                    <option>Plumbing</option>
+                    <option>Painting</option>
+                    <option>Landscaping</option>
+                    <option>Finishing</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="task_description" class="form-label">Task Description</label>
+                <textarea class="form-control" id="task_description" name="task_description" rows="3"
+                    required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="supervisor" class="form-label">Supervisor</label>
+                <select class="form-select" id="supervisor" name="supervisor" required>
+                    <option value="">-- Select supervisor --</option>
+                    <option>Grace Onoli</option>
+                    <option>Chinweuba Ezeh</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="remark" class="form-label">Remark</label>
+                <input type="text" class="form-control" id="remark" name="remark">
+            </div>
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary" id="save-btn">Save</button>
+                <a href="index.html" class="btn btn-secondary">Back to list</a>
+                <button type="button" id="delete-btn" class="btn btn-danger ms-auto d-none">Delete</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
