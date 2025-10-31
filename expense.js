@@ -7,6 +7,14 @@ function show(msg, type = 'success') {
     const el = document.createElement('div'); el.className = `alert alert-${type}`; el.textContent = msg; ph.appendChild(el); setTimeout(() => el.remove(), 3000);
 }
 
+// small number formatter
+function formatNumber(v) {
+    if (v === null || v === undefined || v === '') return '';
+    const n = Number(v);
+    if (isNaN(n)) return '';
+    return n.toLocaleString('en-US', { maximumFractionDigits: 4 });
+}
+
 function calcTotal() {
     const qty = parseFloat(q('#quantity').value) || 0;
     const unit = parseFloat(q('#unitcost').value) || 0;
@@ -49,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tbody = q('#expenses-table tbody'); tbody.innerHTML = '';
                 items.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(it => {
                     const tr = document.createElement('tr');
-                    tr.innerHTML = `<td>${it.date || ''}</td><td>${escape(it.item || '')}</td><td>${it.quantity || ''}</td><td>${it.unitcost || ''}</td><td>${it.totalcost || ''}</td><td>${escape(it.stage || '')}</td><td><a class="btn btn-sm btn-primary" href="expense_detail.html?id=${it.id}">View/Edit</a></td>`;
+                    tr.innerHTML = `<td>${it.date || ''}</td><td>${escape(it.item || '')}</td><td>${formatNumber(it.quantity) || ''}</td><td>${formatNumber(it.unitcost) || ''}</td><td>${formatNumber(it.totalcost) || ''}</td><td>${escape(it.stage || '')}</td><td><a class="btn btn-sm btn-primary" href="expense_detail.html?id=${it.id}">View/Edit</a></td>`;
                     tbody.appendChild(tr);
                 });
             } catch (e) { show('Load failed: ' + e.message, 'danger'); }
