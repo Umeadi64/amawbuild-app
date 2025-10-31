@@ -11,6 +11,9 @@ body { background:#f8f9fa; }
 	.btn { font-size: 0.95rem; padding: 0.45rem 0.65rem; }
 	form .form-control, form .form-select { font-size: 0.95rem; }
 	.card .card-body { padding: 0.9rem; }
+
+	/* hide export button on small screens */
+	#export-btn { display: none !important; }
 }
 
 /* Ensure tables can scroll horizontally on small screens */
